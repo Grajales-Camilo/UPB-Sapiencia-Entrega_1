@@ -35,11 +35,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mostrar escritorio por defecto
     showSection('desktop');
     
-    // Configurar botón de Inicio para volver al escritorio
+    // Configurar botón de Inicio para reproducir video
     const toggleBtn = document.getElementById('themeToggle');
-    if(toggleBtn) {
+    const videoOverlay = document.getElementById('videoOverlay');
+    const introVideo = document.getElementById('introVideo');
+    const closeVideoBtn = document.getElementById('closeVideo');
+
+    function closeVideo() {
+        if (videoOverlay && introVideo) {
+            videoOverlay.style.display = 'none';
+            introVideo.pause();
+            introVideo.currentTime = 0;
+        }
+    }
+
+    if(toggleBtn && videoOverlay && introVideo) {
         toggleBtn.addEventListener('click', () => {
-            showSection('desktop');
+            videoOverlay.style.display = 'flex';
+            introVideo.play().catch(e => console.log("Error al reproducir video:", e));
+        });
+
+        introVideo.addEventListener('ended', () => {
+            closeVideo();
+        });
+
+        if(closeVideoBtn) {
+            closeVideoBtn.addEventListener('click', closeVideo);
+        }
+        
+        // Cerrar al hacer clic fuera del video
+        videoOverlay.addEventListener('click', (e) => {
+            if (e.target === videoOverlay) {
+                closeVideo();
+            }
         });
     }
 });
