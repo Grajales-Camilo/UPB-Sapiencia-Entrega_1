@@ -104,6 +104,20 @@ function renderCalendar() {
     }
 }
 
+function openPdfViewer() {
+    const overlay = document.getElementById('pdfOverlay');
+    if (overlay) {
+        overlay.style.display = 'flex';
+    }
+}
+
+function closePdfViewer() {
+    const overlay = document.getElementById('pdfOverlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+    }
+}
+
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     renderAgenda();

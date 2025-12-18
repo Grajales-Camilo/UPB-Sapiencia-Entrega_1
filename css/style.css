@@ -117,7 +117,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            cursor: pointer;
+            cursor: default;
             box-shadow: inset 1px 1px 0 white;
         }
         .win-btn.close {
@@ -426,4 +426,30 @@
             margin: 10px 0;
             height: 200px;
             overflow-y: auto;
+        }
+
+        /* Remove animations from window controls */
+        .win-btn:hover, .win-btn:active, .win-btn:focus {
+            transform: none !important;
+            transition: none !important;
+            animation: none !important;
+        }
+
+        /* XP Blue Button */
+        .xp-blue-btn {
+            display: inline-block;
+            padding: 5px 20px;
+            text-decoration: none;
+            border: 1px solid #003c74;
+            border-radius: 3px;
+            background: linear-gradient(to bottom, #0058ee 0%, #3593ff 100%);
+            color: white;
+            font-family: "Tahoma", sans-serif;
+            font-size: 11px;
+            cursor: pointer;
+            box-shadow: inset 1px 1px 0 rgba(255,255,255,0.3);
+            text-align: center;
+        }
+        .xp-blue-btn:hover {
+            filter: brightness(1.1);
         }
