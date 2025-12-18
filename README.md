@@ -19,19 +19,29 @@ El sitio actúa como un "Dashboard" centralizado para el estudiante, permitiendo
 UPB-Sapiencia-Entrega_1/
 │
 ├── css/
-│   └── style.css          # Estilos del tema Windows XP y layout
+│   ├── style.css          # Estilos principales (Tema Windows XP)
+│   └── dark-mode.css      # Estilos para el modo oscuro
 │
 ├── js/
-│   └── script.js          # Lógica de navegación y efectos
+│   └── script.js          # Lógica de navegación, agenda y efectos
 │
 ├── images/
-│   └── fondo_1200_800.webp # Wallpaper Bliss
+│   ├── fondo.jpg          # Wallpaper Bliss
+│   ├── windows-xp-warning.png # Icono de advertencia
+│   └── windows_xp_boot_nostalgia.gif # Animación de carga
 │
 ├── videos/
-│   └── Windows_XP.mp4      # Video de introducción
+│   ├── Windows_XP.mp4     # Video de introducción (Boot)
+│   └── Entrega1_FullStack.mp4 # Video explicativo del proyecto
 │
 ├── Docs/
-│   └── Entrega_No_1.pdf   # Documentación académica
+│   ├── CronogramaFullstack.pdf # Cronograma del curso
+│   ├── Curso-HTML5.pdf    # Manual de HTML5
+│   ├── Entrega_No_1.pdf   # Documentación de la entrega
+│   ├── Guía_Instalacion_VSCode.pdf # Guía de herramientas
+│   └── Hoja_Trucos_CSS3.pdf # Cheat sheet de CSS
+│
+├── fonts/                 # Carpeta para fuentes personalizadas
 │
 └── index.html             # Punto de entrada y estructura principal
 ```
