@@ -36,6 +36,10 @@ UPB-Sapiencia-Entrega_1/
 └── index.html             # Punto de entrada y estructura principal
 ```
 
+## 🎥 Vídeo
+
+Mira el video explicativo del proyecto aquí: [Ver Video Explicativo](https://1drv.ms/v/c/f00f5e187039109e/IQD254uwK8GvR4ZjDgeCH86vAVakQNWDbtD9dXz16-4HbtA?e=e2kucS)
+
 ## 🔧 Instalación y Uso
 
 1.  **Clonar el repositorio:**
