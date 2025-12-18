@@ -12,8 +12,12 @@
             --xp-sidebar-bg: #333333;
             --xp-sidebar-border: #666666;
             
-            background-image: linear-gradient(to bottom, #2b2b2b 0%, #1a1a1a 100%);
+            /* Dark overlay on top of the original image */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/fondo.jpg');
             background-color: #1a1a1a;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         body.dark-mode .card {
