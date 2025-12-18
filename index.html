@@ -35,13 +35,14 @@
                 </div>
                 
                 <div class="xp-panel">
-                    <div class="xp-panel-header">Otros Lugares</div>
+                    <div class="xp-panel-header">Navegación</div>
                     <div class="xp-panel-content">
                         <nav>
-                            <a class="nav-item" href="#"><span>📂</span><span>Mis Documentos</span></a>
-                            <a class="nav-item" href="#"><span>🖼️</span><span>Mis Imágenes</span></a>
-                            <a class="nav-item" href="#"><span>🎵</span><span>Mi Música</span></a>
-                            <a class="nav-item" href="#"><span>💻</span><span>Mi PC</span></a>
+                            <a class="nav-item" href="#" onclick="showSection('desktop')"><span>🖥️</span><span>Escritorio</span></a>
+                            <a class="nav-item" href="#" onclick="showSection('agenda')"><span>📅</span><span>Agenda</span></a>
+                            <a class="nav-item" href="#" onclick="showSection('calendar')"><span>🗓️</span><span>Calendario</span></a>
+                            <a class="nav-item" href="#" onclick="showSection('resources')"><span>📂</span><span>Recursos</span></a>
+                            <a class="nav-item" href="#" onclick="showSection('about')"><span>ℹ️</span><span>Acerca de</span></a>
                         </nav>
                     </div>
                 </div>
@@ -58,50 +59,130 @@
             </aside>
 
             <main class="main-area">
-                <div class="cards-grid" id="dashboardGrid">
-                    
-                    <!-- Tarjeta 1: Campus UPB -->
-                    <a href="https://virtual.upb.edu.co/" target="_blank" class="card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Habilidades Blandas</h3>
-                        <p>Curso de comunicación, trabajo en equipo y liderazgo.</p>
-                        <span class="badge">Campus UPB</span>
-                    </a>
-
-                    <!-- Tarjeta 2: Q10 -->
-                    <a href="https://site.q10.com/Login?aplentId=cd90788f-d649-43be-9f0f-1cb7da8237e0" target="_blank" class="card">
-                        <div class="card-icon">💻</div>
-                        <h3>Habilidades Técnicas</h3>
-                        <p>Fundamentos de desarrollo web full stack (front + backend).</p>
-                        <span class="badge">Q10 Académico</span>
-                    </a>
-
-                    <!-- Tarjeta 3: Inglés -->
-                    <a href="https://learn.eltngl.com/dashboard/practice" target="_blank" class="card">
-                        <div class="card-icon">🎭</div>
-                        <h3>Inglés</h3>
-                        <p>Curso de inglés para desarrolladores y práctica.</p>
-                        <span class="badge">National Geographic Learning</span>
-                    </a>
-
-                    <!-- Tarjeta 4: Correo -->
-                    <a href="https://outlook.office.com/mail/" target="_blank" class="card">
-                        <div class="card-icon">📫</div>
-                        <h3>Correo Institucional</h3>
+                <!-- Sección 1: Escritorio (Inicio) -->
+                <div id="section-desktop" class="content-section">
+                    <div class="cards-grid" id="dashboardGrid">
                         
-                        <span class="badge">Outlook</span>
-                    </a>
-                    
-                    <!-- Extra icons to fill space -->
-                    <a href="#" class="card">
-                        <div class="card-icon">⚙️</div>
-                        <h3>Configuración</h3>
-                    </a>
-                    <a href="#" class="card">
-                        <div class="card-icon">🗑️</div>
-                        <h3>Papelera</h3>
-                    </a>
+                        <!-- Tarjeta 1: Campus UPB -->
+                        <a href="https://virtual.upb.edu.co/" target="_blank" class="card">
+                            <div class="card-icon">🤝</div>
+                            <h3>Habilidades Blandas</h3>
+                            <p>Curso de comunicación, trabajo en equipo y liderazgo.</p>
+                            <span class="badge">Campus UPB</span>
+                        </a>
 
+                        <!-- Tarjeta 2: Q10 -->
+                        <a href="https://site.q10.com/Login?aplentId=cd90788f-d649-43be-9f0f-1cb7da8237e0" target="_blank" class="card">
+                            <div class="card-icon">💻</div>
+                            <h3>Habilidades Técnicas</h3>
+                            <p>Fundamentos de desarrollo web full stack (front + backend).</p>
+                            <span class="badge">Q10 Académico</span>
+                        </a>
+
+                        <!-- Tarjeta 3: Inglés -->
+                        <a href="https://learn.eltngl.com/dashboard/practice" target="_blank" class="card">
+                            <div class="card-icon">🎭</div>
+                            <h3>Inglés</h3>
+                            <p>Curso de inglés para desarrolladores y práctica.</p>
+                            <span class="badge">National Geographic Learning</span>
+                        </a>
+
+                        <!-- Tarjeta 4: Correo -->
+                        <a href="https://outlook.office.com/mail/" target="_blank" class="card">
+                            <div class="card-icon">📫</div>
+                            <h3>Correo Institucional</h3>
+                            
+                            <span class="badge">Outlook</span>
+                        </a>
+                        
+                        <!-- Extra icons to fill space -->
+                        <a href="#" class="card" onclick="showSection('about')">
+                            <div class="card-icon">⚙️</div>
+                            <h3>Configuración</h3>
+                        </a>
+                        <a href="#" class="card">
+                            <div class="card-icon">🗑️</div>
+                            <h3>Papelera</h3>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Sección 2: Agenda -->
+                <div id="section-agenda" class="content-section" style="display:none;">
+                    <h2>Agenda del Curso</h2>
+                    <table style="width:100%; border-collapse: collapse; font-size: 11px;">
+                        <tr style="background: #ECE9D8; text-align: left;">
+                            <th style="padding: 5px; border: 1px solid #D4D0C8;">Fecha</th>
+                            <th style="padding: 5px; border: 1px solid #D4D0C8;">Actividad</th>
+                            <th style="padding: 5px; border: 1px solid #D4D0C8;">Estado</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8;">17 Dic 2025</td>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8;">Inicio del Taller HTML/CSS</td>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8; color: green;">Completado</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8;">18 Dic 2025</td>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8;">Entrega de Avance 1</td>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8; color: orange;">Pendiente</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8;">20 Dic 2025</td>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8;">Evaluación de Conceptos</td>
+                            <td style="padding: 5px; border: 1px solid #D4D0C8; color: red;">Próximo</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Sección 3: Calendario -->
+                <div id="section-calendar" class="content-section" style="display:none;">
+                    <h2>Calendario Académico - Diciembre 2025</h2>
+                    <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; margin-top: 20px;">
+                        <div style="font-weight: bold;">Lun</div>
+                        <div style="font-weight: bold;">Mar</div>
+                        <div style="font-weight: bold;">Mié</div>
+                        <div style="font-weight: bold;">Jue</div>
+                        <div style="font-weight: bold;">Vie</div>
+                        <div style="font-weight: bold; color: red;">Sáb</div>
+                        <div style="font-weight: bold; color: red;">Dom</div>
+                        
+                        <!-- Días -->
+                        <div style="color: #ccc;">25</div><div style="color: #ccc;">26</div><div style="color: #ccc;">27</div><div style="color: #ccc;">28</div><div style="color: #ccc;">29</div><div style="color: #ccc;">30</div><div>1</div>
+                        <div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div style="background: #FFD700;">7</div><div>8</div>
+                        <div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+                        <div>16</div><div style="background: #ADD8E6;">17</div><div style="background: #ADD8E6;">18</div><div>19</div><div>20</div><div>21</div><div>22</div>
+                        <div>23</div><div>24</div><div style="background: #FFcccb;">25</div><div>26</div><div>27</div><div>28</div><div>29</div>
+                        <div>30</div><div>31</div>
+                    </div>
+                    <p style="margin-top: 10px; font-size: 10px;">* Amarillo: Festivo | Azul: Clases | Rojo: Navidad</p>
+                </div>
+
+                <!-- Sección 4: Recursos -->
+                <div id="section-resources" class="content-section" style="display:none;">
+                    <h2>Recursos y Archivos</h2>
+                    <ul class="file-list" style="font-size: 12px;">
+                        <li><a href="#">📄 Guía_Instalación_VSCode.pdf</a> - 1.2 MB</li>
+                        <li><a href="#">📄 Manual_HTML5_Basico.pdf</a> - 3.5 MB</li>
+                        <li><a href="#">📄 Hoja_Trucos_CSS3.png</a> - 500 KB</li>
+                        <li><a href="#">📄 Plantilla_Proyecto_Final.zip</a> - 2.0 MB</li>
+                        <li><a href="#">🔗 Enlace a Documentación MDN</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sección 5: Acerca de -->
+                <div id="section-about" class="content-section" style="display:none;">
+                    <h2>Acerca de este Proyecto</h2>
+                    <div style="display: flex; gap: 15px; align-items: flex-start;">
+                        <div style="font-size: 40px;">ℹ️</div>
+                        <div>
+                            <p><strong>Estudiante:</strong> Camilo Grajales</p>
+                            <p><strong>Curso:</strong> Fundamentos Web Full Stack</p>
+                            <p><strong>Institución:</strong> UPB - Sapiencia</p>
+                            <p><strong>Versión:</strong> 1.0 (XP Edition)</p>
+                            <p>Este proyecto es una práctica de HTML, CSS y JavaScript sin frameworks, simulando la interfaz de Windows XP.</p>
+                        </div>
+                    </div>
                 </div>
             </main>
 

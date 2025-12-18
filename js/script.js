@@ -1,7 +1,33 @@
-        // Script kept simple for now, theme toggle logic might be redundant but keeping it won't hurt
-        const bodyEl = document.body;
-        const toggleBtn = document.getElementById('themeToggle');
-        
+function showSection(sectionId) {
+    // Ocultar todas las secciones
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Mostrar la sección seleccionada
+    const selectedSection = document.getElementById('section-' + sectionId);
+    if (selectedSection) {
+        selectedSection.style.display = 'block';
+        // Animación simple de entrada
+        selectedSection.style.opacity = '0';
+        setTimeout(() => {
+            selectedSection.style.opacity = '1';
+            selectedSection.style.transition = 'opacity 0.2s ease-in';
+        }, 10);
+    }
+}
+
+// Inicialización
+document.addEventListener('DOMContentLoaded', () => {
+    // Mostrar escritorio por defecto
+    showSection('desktop');
+    
+    // Configurar botón de Inicio para volver al escritorio
+    const toggleBtn = document.getElementById('themeToggle');
+    if(toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            alert('¡Bienvenido a Windows XP!');
+            showSection('desktop');
         });
+    }
+});

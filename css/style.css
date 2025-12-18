@@ -371,3 +371,22 @@
                 display: none; /* Hide sidebar on small screens like XP folders sometimes did */
             }
         }
+
+        /* Estilos para las nuevas secciones */
+        .content-section {
+            animation: fadeIn 0.3s;
+        }
+        
+        .content-section h2 {
+            color: #0058EE;
+            border-bottom: 1px solid #D4D0C8;
+            padding-bottom: 5px;
+            margin-top: 0;
+            font-family: "Trebuchet MS", sans-serif;
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
