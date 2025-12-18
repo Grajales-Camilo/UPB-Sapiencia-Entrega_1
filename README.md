@@ -27,6 +27,9 @@ UPB-Sapiencia-Entrega_1/
 ├── images/
 │   └── fondo_1200_800.webp # Wallpaper Bliss
 │
+├── videos/
+│   └── Windows_XP.mp4      # Video de introducción
+│
 ├── Docs/
 │   └── Entrega_No_1.pdf   # Documentación académica
 │
@@ -45,11 +48,11 @@ UPB-Sapiencia-Entrega_1/
 ## 🌐 Despliegue
 
 Este proyecto está optimizado para ser desplegado en **GitHub Pages**.
-Para ver la versión en vivo, visita: [Enlace a tu GitHub Pages aquí]
+Para ver la versión en vivo, visita: [https://grajales-camilo.github.io/UPB-Sapiencia-Entrega_1](https://grajales-camilo.github.io/UPB-Sapiencia-Entrega_1)
 
 ## ✒️ Autor
 
-*   **Camilo Grajales** - *Desarrollo y Diseño* - [Perfil de GitHub](https://github.com/Grajales-Camilo)
+*   **Juan Camilo Grajales** - *Desarrollo y Diseño* - [Perfil de GitHub](https://github.com/Grajales-Camilo)
 
 ## 📄 Licencia
 
