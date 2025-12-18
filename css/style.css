@@ -1,0 +1,373 @@
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Windows XP Luna Theme Palette */
+            --xp-blue-title: #0058EE;
+            --xp-blue-title-gradient: linear-gradient(to bottom, #0058EE 0%, #3593FF 4%, #2884F6 18%, #0054E9 100%);
+            --xp-bg: #ECE9D8;
+            --xp-window-bg: #FFFFFF;
+            --xp-border: #00138C;
+            --xp-taskbar: #245DDA;
+            --xp-green-start: #388E3C;
+            --xp-text: #000000;
+            --xp-sidebar-header: linear-gradient(to right, #FFFFFF 0%, #C6D3F7 100%);
+            --xp-sidebar-bg: #D6DFF7; /* #7BA2E7 is darker, D6DFF7 is the light blue bg */
+            --xp-sidebar-border: #FFFFFF;
+            
+            --font-stack: "Tahoma", "Verdana", "Segoe UI", sans-serif;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: #5B7EDC; /* Classic Bliss Blue-ish */
+            /* Bliss Hill approximation */
+            background-image: linear-gradient(to bottom, #5B7EDC 0%, #6D9AF6 50%, #76B041 50%, #548E19 100%);
+            background-attachment: fixed;
+            color: var(--xp-text);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 11px; /* XP default font size was small */
+        }
+
+        /* Layout */
+        .dashboard-shell {
+            width: 100%;
+            max-width: 1024px;
+            padding: 10px;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* XP Window Style Base */
+        .xp-window {
+            background: var(--xp-window-bg);
+            border: 3px solid var(--xp-border);
+            border-radius: 8px 8px 0 0;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .top-strip {
+            /* Mimic a top window title bar */
+            background: var(--xp-blue-title-gradient);
+            border: 3px solid var(--xp-border);
+            border-radius: 8px 8px 0 0;
+            padding: 8px 15px;
+            margin-bottom: 0; /* Connected to the body below */
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            color: white;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .top-strip .titles {
+            grid-column: 2;
+            text-align: center;
+        }
+        
+        .top-strip .titles h1 {
+            font-size: 16px;
+            margin: 0;
+            text-shadow: 1px 1px 0 #00138C;
+            font-weight: bold;
+            font-family: "Trebuchet MS", "Tahoma", sans-serif;
+        }
+        
+        .top-strip .titles p {
+            margin: 0;
+            font-size: 11px;
+            opacity: 0.9;
+            display: none; /* Hide subtitle for cleaner title bar look */
+        }
+
+        .top-strip .actions {
+            grid-column: 3;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Window Controls mimic */
+        .window-controls {
+            display: flex;
+            gap: 2px;
+        }
+        .win-btn {
+            width: 21px;
+            height: 21px;
+            border: 1px solid white;
+            border-radius: 3px;
+            background: linear-gradient(to bottom, #D6DFF7 0%, #FFFFFF 100%);
+            color: black;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: inset 1px 1px 0 white;
+        }
+        .win-btn.close {
+            background: #E04343; /* Red-ish */
+            color: white;
+            border-color: #FFFFFF;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 180px 1fr 200px; /* Fixed widths like old web */
+            gap: 0; /* No gap, borders handle separation */
+            align-items: stretch;
+            flex: 1;
+            background: #ECE9D8; /* Beige window background */
+            border: 3px solid var(--xp-border);
+            border-top: none; /* Connect to title bar */
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            padding: 2px;
+        }
+
+        /* Sidebar (Explorer Bar Style) */
+        .sidebar {
+            background: linear-gradient(to right, #7BA2E7 0%, #6375D6 100%); /* Sidebar container blue */
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: auto;
+        }
+
+        .sidebar nav {
+            background: transparent;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .xp-panel {
+            background: white;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .xp-panel-header {
+            background: linear-gradient(to right, #FFFFFF 0%, #C6D3F7 100%);
+            padding: 5px 10px;
+            font-weight: bold;
+            color: #215DC6;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .xp-panel-header::after {
+            content: '︽';
+            font-size: 10px;
+            color: #215DC6;
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: -1px -1px 2px rgba(0,0,0,0.1);
+        }
+
+        .xp-panel-content {
+            background: #D6DFF7;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .sidebar .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #215DC6;
+            text-decoration: none;
+            font-size: 11px;
+            padding: 2px 0;
+        }
+
+        .sidebar .nav-item:hover {
+            text-decoration: underline;
+            color: #428EFF;
+        }
+        
+        .sidebar .nav-item span:first-child {
+            /* Icon styling */
+            filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.2));
+        }
+
+        /* Main Area */
+        .main-area {
+            background: white;
+            border: 1px solid #7F9DB9; /* Inset border look */
+            margin: 5px;
+            padding: 15px;
+            overflow-y: auto;
+            box-shadow: inset 2px 2px 2px rgba(0,0,0,0.05);
+        }
+
+        /* Grid de Tarjetas (Icons View) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 20px;
+            align-content: start;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            padding: 5px;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            background-color: #E8F1FC; /* Selection blue light */
+            border: 1px solid #7DA2CE;
+            border-radius: 3px;
+        }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 5px;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+            /* Remove previous gradients */
+            background: none;
+            width: auto;
+            height: auto;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 11px;
+            font-weight: normal;
+            color: black;
+        }
+
+        .card p, .badge {
+            display: none; /* Hide details in icon view */
+        }
+
+        /* Theme Toggle (Start Button Style) */
+        .theme-toggle {
+            background: linear-gradient(to bottom, #388E3C 0%, #2E7D32 100%);
+            color: white;
+            border: 2px solid #1B5E20;
+            border-radius: 10px 0 10px 0; /* Weird XP shape approx */
+            padding: 3px 15px;
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            font-family: "Tahoma", sans-serif;
+            box-shadow: inset 1px 1px 0 rgba(255,255,255,0.4);
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .theme-toggle .icon {
+            font-style: normal;
+            filter: drop-shadow(1px 1px 0 rgba(0,0,0,0.3));
+        }
+
+        .theme-toggle:active {
+            background: #1B5E20;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Panel lateral derecho (Details Pane) */
+        .aside {
+            background: #ECE9D8;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .panel {
+            background: white;
+            border: 1px solid #D4D0C8;
+            padding: 2px;
+            box-shadow: inset 1px 1px 0 #808080, inset -1px -1px 0 white;
+        }
+
+        .panel h4 {
+            background: #0058EE; /* Active Title Bar Color */
+            background: linear-gradient(to right, #0058EE 0%, #3593FF 100%);
+            color: white;
+            margin: 0;
+            padding: 3px 5px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .panel .item {
+            padding: 5px;
+            border-bottom: 1px solid #ECE9D8;
+            font-size: 11px;
+        }
+
+        .mini-calendar {
+            padding: 10px;
+            text-align: center;
+            background: white;
+            font-size: 11px;
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 5px;
+            margin: 0;
+        }
+
+        .file-list li {
+            padding: 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+        }
+        
+        .file-list li::before {
+            content: '📄';
+        }
+
+        /* Responsivo */
+        @media (max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .dashboard-shell {
+                height: auto;
+            }
+            .sidebar {
+                display: none; /* Hide sidebar on small screens like XP folders sometimes did */
+            }
+        }

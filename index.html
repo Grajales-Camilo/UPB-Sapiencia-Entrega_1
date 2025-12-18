@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Fundamentos Web Full Stack - XP Edition</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- DASHBOARD PRINCIPAL -->
+    <div class="dashboard-shell">
+        <div class="top-strip">
+            <div class="titles header">
+                <h1>Curso Fundamentos Web Full Stack</h1>
+            </div>
+            <div class="actions">
+                <div class="window-controls">
+                    <div class="win-btn">_</div>
+                    <div class="win-btn">□</div>
+                    <div class="win-btn close">X</div>
+                </div>
+            </div>
+        </div>
+        <div class="layout">
+            <aside class="sidebar">
+                <div class="xp-panel">
+                    <div class="xp-panel-header">Tareas de Sistema</div>
+                    <div class="xp-panel-content">
+                        <nav>
+                            <a class="nav-item" href="#"><span>🏠</span><span>Ver información del sistema</span></a>
+                            <a class="nav-item" href="#"><span>💼</span><span>Agregar o quitar programas</span></a>
+                            <a class="nav-item" href="#"><span>📞</span><span>Cambiar configuración</span></a>
+                        </nav>
+                    </div>
+                </div>
+                
+                <div class="xp-panel">
+                    <div class="xp-panel-header">Otros Lugares</div>
+                    <div class="xp-panel-content">
+                        <nav>
+                            <a class="nav-item" href="#"><span>📂</span><span>Mis Documentos</span></a>
+                            <a class="nav-item" href="#"><span>🖼️</span><span>Mis Imágenes</span></a>
+                            <a class="nav-item" href="#"><span>🎵</span><span>Mi Música</span></a>
+                            <a class="nav-item" href="#"><span>💻</span><span>Mi PC</span></a>
+                        </nav>
+                    </div>
+                </div>
+                
+                <div class="xp-panel">
+                    <div class="xp-panel-header">Detalles</div>
+                    <div class="xp-panel-content">
+                        <div style="font-size: 10px; padding: 5px;">
+                            <strong>Carpeta de Usuario</strong><br>
+                            Carpeta de Sistema
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-area">
+                <div class="cards-grid" id="dashboardGrid">
+                    
+                    <!-- Tarjeta 1: Campus UPB -->
+                    <a href="https://virtual.upb.edu.co/" target="_blank" class="card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Habilidades Blandas</h3>
+                        <p>Curso de comunicación, trabajo en equipo y liderazgo.</p>
+                        <span class="badge">Campus UPB</span>
+                    </a>
+
+                    <!-- Tarjeta 2: Q10 -->
+                    <a href="https://site.q10.com/Login?aplentId=cd90788f-d649-43be-9f0f-1cb7da8237e0" target="_blank" class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>Habilidades Técnicas</h3>
+                        <p>Fundamentos de desarrollo web full stack (front + backend).</p>
+                        <span class="badge">Q10 Académico</span>
+                    </a>
+
+                    <!-- Tarjeta 3: Inglés -->
+                    <a href="https://learn.eltngl.com/dashboard/practice" target="_blank" class="card">
+                        <div class="card-icon">🎭</div>
+                        <h3>Inglés</h3>
+                        <p>Curso de inglés para desarrolladores y práctica.</p>
+                        <span class="badge">National Geographic Learning</span>
+                    </a>
+
+                    <!-- Tarjeta 4: Correo -->
+                    <a href="https://outlook.office.com/mail/" target="_blank" class="card">
+                        <div class="card-icon">📫</div>
+                        <h3>Correo Institucional</h3>
+                        
+                        <span class="badge">Outlook</span>
+                    </a>
+                    
+                    <!-- Extra icons to fill space -->
+                    <a href="#" class="card">
+                        <div class="card-icon">⚙️</div>
+                        <h3>Configuración</h3>
+                    </a>
+                    <a href="#" class="card">
+                        <div class="card-icon">🗑️</div>
+                        <h3>Papelera</h3>
+                    </a>
+
+                </div>
+            </main>
+
+            <aside class="aside">
+                <div class="panel">
+                    <h4>Agenda hoy</h4>
+                    <div class="item">18:00 · Clase</div>
+                    <div class="item">20:00 · Entrega</div>
+                </div>
+                <div class="panel">
+                    <h4>Calendario</h4>
+                    <div class="mini-calendar">
+                        Octubre 2023
+                        <br>
+                        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; margin-top: 5px; font-size: 9px;">
+                            <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+                            <span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="panel">
+                    <h4>Archivos</h4>
+                    <ul class="file-list">
+                        <li>Manual.pdf</li>
+                        <li>Guía.docx</li>
+                        <li>Notas.txt</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-top: auto; text-align: center;">
+                     <button id="themeToggle" class="theme-toggle" aria-label="Inicio">
+                        <span class="icon" aria-hidden="true">🏁</span>
+                        <span>Inicio</span>
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
