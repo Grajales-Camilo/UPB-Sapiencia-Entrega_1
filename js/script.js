@@ -18,8 +18,20 @@ function showSection(sectionId) {
     }
 }
 
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    // Opcional: Guardar preferencia
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDark);
+}
+
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
+    // Cargar preferencia de modo oscuro
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
     // Mostrar escritorio por defecto
     showSection('desktop');
     

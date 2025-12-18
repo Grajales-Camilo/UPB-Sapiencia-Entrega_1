@@ -23,7 +23,9 @@
             font-family: var(--font-stack);
             background-color: #5B7EDC; /* Classic Bliss Blue-ish */
             /* Bliss Hill approximation */
-            background-image: linear-gradient(to bottom, #5B7EDC 0%, #6D9AF6 50%, #76B041 50%, #548E19 100%);
+            background-image: url('../images/fondo_1200_800.webp');
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
             color: var(--xp-text);
             margin: 0;

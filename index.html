@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Fundamentos Web Full Stack - XP Edition</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
 </head>
 <body>
     <!-- DASHBOARD PRINCIPAL -->
@@ -23,16 +24,6 @@
         </header>
         <div class="layout">
             <aside class="sidebar">
-                <div class="xp-panel">
-                    <div class="xp-panel-header">Tareas de Sistema</div>
-                    <div class="xp-panel-content">
-                        <nav>
-                            <a class="nav-item" href="#"><span>🏠</span><span>Ver información del sistema</span></a>
-                            <a class="nav-item" href="#"><span>💼</span><span>Agregar o quitar programas</span></a>
-                            <a class="nav-item" href="#"><span>📞</span><span>Cambiar configuración</span></a>
-                        </nav>
-                    </div>
-                </div>
                 
                 <div class="xp-panel">
                     <div class="xp-panel-header">Navegación</div>
@@ -96,13 +87,9 @@
                         </a>
                         
                         <!-- Extra icons to fill space -->
-                        <button class="card" onclick="showSection('about')" style="background:none; border:none; cursor:pointer;">
+                        <button class="card" onclick="toggleDarkMode()" style="background:none; border:none; cursor:pointer;">
                             <div class="card-icon" aria-hidden="true">⚙️</div>
                             <h3>Configuración</h3>
-                        </button>
-                        <button class="card" style="background:none; border:none; cursor:pointer;">
-                            <div class="card-icon" aria-hidden="true">🗑️</div>
-                            <h3>Papelera</h3>
                         </button>
 
                     </div>
@@ -187,11 +174,6 @@
             </main>
 
             <aside class="aside">
-                <div class="panel">
-                    <h4>Agenda hoy</h4>
-                    <div class="item">18:00 · Clase</div>
-                    <div class="item">20:00 · Entrega</div>
-                </div>
                 <div class="panel">
                     <h4>Calendario</h4>
                     <div class="mini-calendar">
