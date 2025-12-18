@@ -9,18 +9,18 @@
 <body>
     <!-- DASHBOARD PRINCIPAL -->
     <div class="dashboard-shell">
-        <div class="top-strip">
+        <header class="top-strip">
             <div class="titles header">
                 <h1>Curso Fundamentos Web Full Stack</h1>
             </div>
             <div class="actions">
                 <div class="window-controls">
-                    <div class="win-btn">_</div>
-                    <div class="win-btn">□</div>
-                    <div class="win-btn close">X</div>
+                    <button class="win-btn" aria-label="Minimizar">_</button>
+                    <button class="win-btn" aria-label="Maximizar">□</button>
+                    <button class="win-btn close" aria-label="Cerrar">X</button>
                 </div>
             </div>
-        </div>
+        </header>
         <div class="layout">
             <aside class="sidebar">
                 <div class="xp-panel">
@@ -60,56 +60,56 @@
 
             <main class="main-area">
                 <!-- Sección 1: Escritorio (Inicio) -->
-                <div id="section-desktop" class="content-section">
+                <section id="section-desktop" class="content-section">
                     <div class="cards-grid" id="dashboardGrid">
                         
                         <!-- Tarjeta 1: Campus UPB -->
-                        <a href="https://virtual.upb.edu.co/" target="_blank" class="card">
-                            <div class="card-icon">🤝</div>
+                        <a href="https://virtual.upb.edu.co/" target="_blank" rel="noopener noreferrer" class="card">
+                            <div class="card-icon" aria-hidden="true">🤝</div>
                             <h3>Habilidades Blandas</h3>
                             <p>Curso de comunicación, trabajo en equipo y liderazgo.</p>
                             <span class="badge">Campus UPB</span>
                         </a>
 
                         <!-- Tarjeta 2: Q10 -->
-                        <a href="https://site.q10.com/Login?aplentId=cd90788f-d649-43be-9f0f-1cb7da8237e0" target="_blank" class="card">
-                            <div class="card-icon">💻</div>
+                        <a href="https://site.q10.com/Login?aplentId=cd90788f-d649-43be-9f0f-1cb7da8237e0" target="_blank" rel="noopener noreferrer" class="card">
+                            <div class="card-icon" aria-hidden="true">💻</div>
                             <h3>Habilidades Técnicas</h3>
                             <p>Fundamentos de desarrollo web full stack (front + backend).</p>
                             <span class="badge">Q10 Académico</span>
                         </a>
 
                         <!-- Tarjeta 3: Inglés -->
-                        <a href="https://learn.eltngl.com/dashboard/practice" target="_blank" class="card">
-                            <div class="card-icon">🎭</div>
+                        <a href="https://learn.eltngl.com/dashboard/practice" target="_blank" rel="noopener noreferrer" class="card">
+                            <div class="card-icon" aria-hidden="true">🎭</div>
                             <h3>Inglés</h3>
                             <p>Curso de inglés para desarrolladores y práctica.</p>
                             <span class="badge">National Geographic Learning</span>
                         </a>
 
                         <!-- Tarjeta 4: Correo -->
-                        <a href="https://outlook.office.com/mail/" target="_blank" class="card">
-                            <div class="card-icon">📫</div>
+                        <a href="https://outlook.office.com/mail/" target="_blank" rel="noopener noreferrer" class="card">
+                            <div class="card-icon" aria-hidden="true">📫</div>
                             <h3>Correo Institucional</h3>
                             
                             <span class="badge">Outlook</span>
                         </a>
                         
                         <!-- Extra icons to fill space -->
-                        <a href="#" class="card" onclick="showSection('about')">
-                            <div class="card-icon">⚙️</div>
+                        <button class="card" onclick="showSection('about')" style="background:none; border:none; cursor:pointer;">
+                            <div class="card-icon" aria-hidden="true">⚙️</div>
                             <h3>Configuración</h3>
-                        </a>
-                        <a href="#" class="card">
-                            <div class="card-icon">🗑️</div>
+                        </button>
+                        <button class="card" style="background:none; border:none; cursor:pointer;">
+                            <div class="card-icon" aria-hidden="true">🗑️</div>
                             <h3>Papelera</h3>
-                        </a>
+                        </button>
 
                     </div>
-                </div>
+                </section>
 
                 <!-- Sección 2: Agenda -->
-                <div id="section-agenda" class="content-section" style="display:none;">
+                <section id="section-agenda" class="content-section" style="display:none;">
                     <h2>Agenda del Curso</h2>
                     <table style="width:100%; border-collapse: collapse; font-size: 11px;">
                         <tr style="background: #ECE9D8; text-align: left;">
@@ -133,10 +133,10 @@
                             <td style="padding: 5px; border: 1px solid #D4D0C8; color: red;">Próximo</td>
                         </tr>
                     </table>
-                </div>
+                </section>
 
                 <!-- Sección 3: Calendario -->
-                <div id="section-calendar" class="content-section" style="display:none;">
+                <section id="section-calendar" class="content-section" style="display:none;">
                     <h2>Calendario Académico - Diciembre 2025</h2>
                     <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; margin-top: 20px;">
                         <div style="font-weight: bold;">Lun</div>
@@ -156,10 +156,10 @@
                         <div>30</div><div>31</div>
                     </div>
                     <p style="margin-top: 10px; font-size: 10px;">* Amarillo: Festivo | Azul: Clases | Rojo: Navidad</p>
-                </div>
+                </section>
 
                 <!-- Sección 4: Recursos -->
-                <div id="section-resources" class="content-section" style="display:none;">
+                <section id="section-resources" class="content-section" style="display:none;">
                     <h2>Recursos y Archivos</h2>
                     <ul class="file-list" style="font-size: 12px;">
                         <li><a href="#">📄 Guía_Instalación_VSCode.pdf</a> - 1.2 MB</li>
@@ -168,13 +168,13 @@
                         <li><a href="#">📄 Plantilla_Proyecto_Final.zip</a> - 2.0 MB</li>
                         <li><a href="#">🔗 Enlace a Documentación MDN</a></li>
                     </ul>
-                </div>
+                </section>
 
                 <!-- Sección 5: Acerca de -->
-                <div id="section-about" class="content-section" style="display:none;">
+                <section id="section-about" class="content-section" style="display:none;">
                     <h2>Acerca de este Proyecto</h2>
                     <div style="display: flex; gap: 15px; align-items: flex-start;">
-                        <div style="font-size: 40px;">ℹ️</div>
+                        <div style="font-size: 40px;" aria-hidden="true">ℹ️</div>
                         <div>
                             <p><strong>Estudiante:</strong> Camilo Grajales</p>
                             <p><strong>Curso:</strong> Fundamentos Web Full Stack</p>
@@ -183,7 +183,7 @@
                             <p>Este proyecto es una práctica de HTML, CSS y JavaScript sin frameworks, simulando la interfaz de Windows XP.</p>
                         </div>
                     </div>
-                </div>
+                </section>
             </main>
 
             <aside class="aside">
